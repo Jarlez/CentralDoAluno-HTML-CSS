@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Projeto WEB - AV1</title>
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+   
+    <!-- CSS Topo e Rodapé -->
+    <link href="css/starter-template.css" rel="stylesheet">
+
+    <!-- CSS Interno -->
+    <style>
+      td, th {
+        text-align: center;
+      }
+    </style>
+ 
+    <!-- Solução Questão - 03 -->
+    <script type="text/javascript">
+      function contracheque(){
+        var nome    =  form_gerarcontracheque.nome.value;
+        var cargo   =  form_gerarcontracheque.cargo.value;
+        var salario =  form_gerarcontracheque.salario.value;
+
+        var novo_sal = "CARGO NÃO POSSUI REAJUSTE DE SALÁRIO";
+
+        //salario = parseFloat(salario);
+
+
+        if (cargo == "Atendente") {
+          var aumento  = (parseFloat(salario) * 0.08);
+          var novo_sal  = (parseFloat(salario) + parseFloat(aumento));
+          var perc_aum = " (+ 8%)";
+        }
+        else if (cargo == "Estoquista") {
+          var aumento = (parseFloat(salario) * 0.06);
+          var novo_sal  = (parseFloat(salario) + parseFloat(aumento));
+          var perc_aum = " (+ 6%)";
+        } 
+        else if (cargo == "Gerente") {
+          var aumento = (parseFloat(salario) * 0.03);
+          var novo_sal  = (parseFloat(salario) + parseFloat(aumento));
+          var perc_aum = " (+ 3%)";
+        }
+        else {
+          var aumento = "CARGO SEM AUMENTO NO MOMENTO.";
+        }
+
+
+        if (novo_sal <= 1045) {
+          var inss  = (parseFloat(novo_sal) * 0.075);
+          var sal_liq = parseFloat(novo_sal) - parseFloat(inss);
+          var perc_inss = " (- 7,5%)";
+        }
+        else if ((novo_sal > 1045) && (novo_sal <= 2089.6)) {
+          var inss  = (parseFloat(novo_sal) * 0.09);
+          var sal_liq = parseFloat(novo_sal) - parseFloat(inss);
+          var perc_inss = " (- 9%)";
+        }
+        else if ((novo_sal > 2089.6) && (novo_sal <= 3134.4)) {
+          var inss  = (parseFloat(novo_sal) * 0.12);
+          var sal_liq = parseFloat(novo_sal) - parseFloat(inss);
+          var perc_inss = " (- 12%)";
+        }
+        else {
+          var inss  = (parseFloat(novo_sal) * 0.14);
+          var sal_liq = parseFloat(novo_sal) - parseFloat(inss);
+          var perc_inss = " (- 14%)";
+        }
+
+        document.getElementById("demo").innerHTML = 
+        "---------------------------------------------- <b>CONTRA CHEQUE</b> ----------------------------------------------"+
+        "<br><b>FUNCIONÁRIO:</b> "+nome.toUpperCase()+
+        "<br><b>CARGO:</b> "+cargo.toUpperCase()+
+        "<br><b>SALÁRIO ATUAL:</b> "+parseFloat(salario).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })+
+        "<br><b>AUMENTO SALARIAL:</b> " +aumento.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })+perc_aum+
+        "<br><b>NOVO SALÁRIO:</b> "+novo_sal.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })+
+        "<br><b>DESC. INSS:</b> "+inss.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })+perc_inss+
+        "<br><b>SALÁRIO LIQ.:</b> "+sal_liq.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })+
+        "<br>------------------------------------------------------------------------------------------------------------------"
+
+      }
+    </script>
+
+  </head>
+
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+          <a class="navbar-brand" href="index.html">Projeto WEB</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        
+          <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item active">
+                <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+              </li>
+
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Questões</a>
+                <div class="dropdown-menu" aria-labelledby="dropdown01">
+                  <a class="dropdown-item" href="questao1.html">Questão - 01</a>
+                  <a class="dropdown-item" href="questao2.html">Questão - 02</a>
+                  <a class="dropdown-item" href="questao3.html">Questão - 03</a>
+                  <a class="dropdown-item" href="questao4.html">Questão - 04</a>
+                </div>
+              </li>
+            </ul>
+          </div>
+      </nav>
+    </header>
+    
+    <main role="main" class="container">
+
+      <div class="starter-template">
+        <h1>Questão - 03</h1>
+        <p class="lead">Software para gerar CONTRA CHEQUE de um funcionário.<br> Software para ser utilizado no setor de Recursos Humanos de qualquer empresa.</p>
+      </div>
+      
+      <div class="row">
+        <div class="col-6">
+          <h5 style="text-align: center;">PLANO CARGOS E CARREIRA</h5>
+          <table class="table table-sm">
+            <thead>
+              <tr>
+                <th scope="col">CARGO</th>
+                <th scope="col">AUMENTO (%)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>ATENDENTE</td>
+                <td>8</td>
+              </tr>
+              <tr>
+                <td>ESTOQUISTA</td>
+                <td>6</td>
+              </tr>
+              <tr>
+                <td>GERENTE</td>
+                <td>3</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        
+        <div class="col-6">
+          <h5 style="text-align: center;">CONTRIUBUIÇÃO INSS 2020</h5>
+          <table class="table table-sm">  
+            <thead>
+              <tr>
+                <th scope="col">SAlÁRIO BASE</th>
+                <th scope="col">ALIQUOTA INSS (%)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>até R$ 1.045,00</td>
+                <td>7,5</td>
+              </tr>
+              <tr>
+                <td>de R$ 1.045,01 até R$ 2.089,60</td>
+                <td>9</td>
+              </tr>
+              <tr>
+                <td>de R$ 2.089,61 até R$ 3.134,40</td>
+                <td>12</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <hr>
+
+      <div>
+        <form name="form_gerarcontracheque" id="form_gerarcontracheque">
+          <div class="form-row">
+            <div class="col">
+              <label>Funcionário</label>
+              <input type="text" class="form-control" id="nome" name="nome" placeholder="Nome completo do funcionário" required>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="col-md-6 mb-3">
+              <label>Cargo</label>
+              <select class="custom-select" id="cargo" name="cargo" required>
+                <option selected disabled value="">Selecione um cargo...</option>
+                <option value="Atendente">Atendente</option>
+                <option value="Estoquista">Estoquista</option>
+                <option value="Gerente">Gerente</option>
+              </select>
+            </div>
+
+            <div class="col-md-6 mb-3">
+              <label>Salário</label>
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="inputGroupPrepend2">R$</span>
+                </div>
+                <input type="text" class="form-control" id="salario" name="salario" required>
+              </div>
+            </div>
+          </div>
+
+          <button onclick="contracheque()" class="btn btn-outline-primary float-right" type="button">Calcular</button>
+        </form>
+      </div>
+      <br><br>
+      <p id="demo"></p>
+
+    </main>
+    
+    <footer class="footer">
+        <div class="container">
+          <span class="text-muted">Site desenvolvido por Wellington - Code in <a target="_blank" href="https://github.com/spaaws/atividadefinal">GitHub</a> </span>
+        </div>
+    </footer>
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    </body>
+</html>

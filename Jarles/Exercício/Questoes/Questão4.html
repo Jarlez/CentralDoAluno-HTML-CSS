@@ -1,0 +1,147 @@
+<!Doctype html>
+<html lang="pt-BR>
+  <head>
+   
+        
+        <meta charset=" utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+<title>Projeto WEB - AV1</title>
+
+<style>
+    #ajuste {
+
+        margin: 30px;
+        margin-left: 100px;
+    }
+    #formatar {
+        padding: 1px;
+        padding-left: 10px;
+    }
+</style>
+
+<script type="text/javascript">
+
+
+function  IMC(){
+        var peso =  form_gerarIMC.peso.value;
+        var nome = form_gerarIMC.nome.value;
+        var altura =  form_gerarIMC.altura.value;
+        
+        var resultado;
+        var problemas;
+        var imc = parseFloat(peso) / (parseFloat(altura) * parseFloat(altura));
+        imc = imc.toFixed(2);
+        if(imc < 18.5){
+          resultado = "Baixo Peso";
+          problemas = "Peso baixo para a altura. Maior probabilidade de anorexia.";
+        }
+        else if((imc >= 18.5) && (imc <= 24.9)){
+          resultado =  "Peso Normal";
+          problemas = "Maior probabilidade de ser um indivíduo sauável.";
+        }
+        else if((imc >= 25) && (imc <= 29.9)) {
+          resultado = "Pré-obesidade";
+          problemas = "Alguma probabilidade de problemas de saúde. Predisposição a tornar-se obeso.";
+        }
+
+        else if((imc >= 30) && (imc  <= 34.9)){
+          resultado = "Obesidade Grau I";
+          problemas = "Risco Moderado de diabetes tipo II, hipertensão, colesterol, cardiopatia.";
+        }
+
+        else if((imc >= 35) && (imc <= 39.9)) {
+          resultado = "Obesidade Grau II";
+          problemas = "Risco Grave. Aumenta o risco das doenças associadas. O risco de mortalidade aumenta 50%";
+        }
+        else if(imc > 40){
+          resultado = "Obesidade Grau III ou obesidade mórbida";
+          problemas = "Risco Muito Grave. O risco de doenças associadas assim como a mortalidade aumenta 90%";
+        }
+
+        document.getElementById("resultado").innerHTML = 
+        "--------------------------------------------<br>"+
+        "<br><strong>RESULTADO - IMC</strong><br><br>"+
+        "<strong>PACIENTE: </strong>"+nome.toUpperCase()+
+        "<br><strong>PESO: </strong>"+peso+" Kg <br>"+
+        "<strong>ALTURA: </strong>"+altura+ 
+        "<br><strong>IMC: </strong>"+imc+
+        "<br><br>Olá " + nome+", você está no nível de obesidade: "+ "<strong>"+resultado+"</strong>."+
+        "<br>Com este nível de IMC você está propenso a apresentar os<br>"+
+        "seguintes problemas de saúde: "+"<strong>"+problemas+"</strong>.<br>"+
+        "<br>--------------------------------------------";
+      }
+
+
+
+</script>
+
+</head>
+
+<body>
+
+
+    <main role="main" class="container">
+
+        <div class="starter-template">
+            <h1>Questão - 04</h1>
+            <p class="lead">Software que informa o IHC do usuário.<br></p>
+        </div>
+
+        <img src="./../../img/Screenshot_2.png" />
+        <img src="./../../img/Screenshot_1.png" >
+        <form name="form_gerarIMC" id="form_gerarIMC">
+            <div class="form-row">
+                <div class="col"id="formatar">
+                    <label>Peso</label>
+                    <input type="text" class="form-control" id="peso" name="peso"
+                        placeholder="Informe o seu peso em kg EX: 50" required>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="col"id="formatar">
+                    <label>Nome</label>
+                    <input type="text" class="form-control" id="name" name="nome"
+                        placeholder="Informe seu nome completo" required>
+                </div> 
+            <div class="form-row">
+                <div class="col" id="formatar">
+                    <label>Altura</label>
+                    <input type="text" class="form-control" id="altura" name="altura"
+                        placeholder="Altura ex : 1.79" required>
+                </div>
+                <br>
+
+                <br>
+
+                <button id="ajuste" onclick="IMC()" class="btn btn-outline-primary float-right"
+                    type="button">Calcular</button>
+        </form>
+        </div>
+        <br><br>
+        <p id="resultado"></p>
+
+    </main>
+    </div>
+
+
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

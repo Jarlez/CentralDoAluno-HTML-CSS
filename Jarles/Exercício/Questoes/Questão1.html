@@ -1,0 +1,144 @@
+<!Doctype html>
+<html lang="pt-BR>
+  <head>
+   
+        
+        <meta charset=" utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+  integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+<title>Projeto WEB - AV1</title>
+
+<link rel="stylesheet" href="style.css">
+
+
+<script type="text/javascript">
+
+  function mediaAluno() {
+    var aluno = form_gerarmediaAluno.aluno.value;
+    var nota1 = form_gerarmediaAluno.nota1.value;
+    var nota2 = form_gerarmediaAluno.nota2.value;
+    var disciplina = form_gerarmediaAluno.disciplina.value;
+
+    var media = (parseFloat(nota1) + parseFloat(nota2)) / 2;
+    var resultado;
+
+    if (media <= 3) {
+      resultado = "Reprovado";
+    } else if (media > 3 && media < 7) {
+      resultado = "Recuperação";
+    } else if (media >= 7) {
+      resultado = "Aprovado";
+    }
+
+    document.getElementById("resultado").innerHTML =
+      "<strong>Resultado:</strong><br>" +
+      aluno.toUpperCase() + ", Você foi " + resultado.toUpperCase() + " na disciplina " + disciplina.toUpperCase() + " com Média " + media + ".";
+
+  }
+
+</script>
+
+</head>
+
+<body>
+
+
+  <main role="main" class="container">
+
+    <div class="starter-template">
+      <h1>Questão - 01</h1>
+      <p class="lead">Software que informa aprovação ou reprovação do aluno.<br> Software utilizado em colégios ou
+        universidades.</p>
+    </div>
+
+    <div class="row">
+      <div class="col-6">
+        <h5 style="text-align: center;">MÉDIA DO ALUNO</h5>
+        <table class="table table-sm">
+          <thead>
+            <tr>
+              <th scope="col">MÉDIA ARITIMÉTICA</th>
+              <th scope="col">MENSAGEM</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>menor ou igual a 3</td>
+              <td>REPROVADO</td>
+            </tr>
+            <tr>
+              <td> menor que 3 e menor que 7 </td>
+
+              <td>RECUPERAÇÃO</td>
+            </tr>
+            <tr>
+              <td>maior ou igual a 7</td>
+              <td>APROVADO</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+
+    <hr>
+
+    <div>
+      <form name="form_gerarmediaAluno" id="form_gerarmediaAluno">
+        <div class="form-row">
+          <div class="col">
+            <label>Aluno</label>
+            <input type="text" class="form-control" id="aluno" name="'aluno" placeholder="Nome completo do Aluno"
+              required>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="col">
+            <label>Nota I</label>
+            <input type="number" class="form-control" id="nota1" name="'nota1"
+              placeholder="1ª nota do aluno na disciplina" required>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="col">
+            <label>Nota II</label>
+            <input type="number" class="form-control" id="nota2" name="'nota2"
+              placeholder="2ª nota do aluno na disciplina" required>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="col">
+            <label>Disciplina</label>
+            <input type="text" class="form-control" id="disciplina" name="'disciplina" placeholder="Nome da Disciplina"
+              required>
+          </div>
+        </div>
+        <br>
+
+        <button onclick="mediaAluno()" class="btn btn-outline-primary float-right" type="button">Calcular</button>
+      </form>
+    </div>
+    <br><br>
+    <p id="resultado"></p>
+
+  </main>
+
+
+
+
+
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
