@@ -1,29 +1,27 @@
 <!Doctype html>
-<html lang="pt-BR>
-  
-<head> 
+<html lang="pt-BR">
 
-        <meta charset=" utf-8>
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<head>
 
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
-    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <meta charset=" utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-<title> QUESTÃO 2 </title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
+    <title> QUESTÃO 2 </title>
 
 
-<script type="text/javascript">
 
-    function gerarCarne() {
-        var cliente = form_gerarCarne.cliente.value;
-        var produto = form_gerarCarne.produto.value;
-        var preco = form_gerarCarne.preco.value;
-        var quantidadeProduto = form_gerarCarne.quantidadeProduto.value;
-        var quantidadeParcela = form_gerarCarne.quantidadeParcela.value;
+    <script type="text/javascript">
+        function gerarCarne() {
+            var cliente = form_gerarCarne.cliente.value;
+            var produto = form_gerarCarne.produto.value;
+            var preco = form_gerarCarne.preco.value;
+            var quantidadeProduto = form_gerarCarne.quantidadeProduto.value;
+            var quantidadeParcela = form_gerarCarne.quantidadeParcela.value;
 
-        var parcelamento;
-        var valor;
+            var parcelamento;
+            var valor;
 
             if (quantidadeParcela == 3) {
                 preco = preco * (5 / 100);
@@ -31,21 +29,19 @@
             } else if (quantidadeParcela == 6) {
                 preco = preco * (12 / 100);
                 valor = preco / quantidadeParcela;
-            }else{
-                valor=preco/quantidadeParcela
+            } else {
+                valor = preco / quantidadeParcela
             }
 
-        document.getElementById("resultado").innerHTML =
-            "--------------------------------------------<br>" +
-            "<strong>CLIENTE: <strong>" + cliente +
-            "<br><strong>PRODUTO: </strong>" + produto +
-            "<br><strong>VALOR: </strong>" + valor + "        PARCELA 01/" + quantidadeParcela +
-            "<br>--------------------------------------------";
-    }
-
-
-
-</script>
+            document.getElementById("resultado").innerHTML =
+                "--------------------------------------------<br>" +
+                "<strong>CLIENTE: <strong>" + cliente +
+                "<br><strong>PRODUTO: </strong>" + produto +
+                "<br><strong>VALOR: </strong>" + valor +
+                "<br><strong>PARCELA 01/" + quantidadeParcela +
+                "<br>--------------------------------------------";
+        }
+    </script>
 
 </head>
 
@@ -65,37 +61,32 @@
                 <div class="form-row">
                     <div class="col">
                         <label>Cliente</label>
-                        <input type="text" class="form-control" id="cliente" name="cliente"
-                            placeholder="Insira seu nome completo" required>
+                        <input type="text" class="form-control" id="cliente" name="cliente" placeholder="Insira seu nome completo" required>
                     </div>
                 </div>
                 <div class="form-row">
                     <div class="col">
                         <label>Produto</label>
-                        <input type="text" class="form-control" id="produto" name="produto"
-                            placeholder="Informe o nome do produto" required>
+                        <input type="text" class="form-control" id="produto" name="produto" placeholder="Informe o nome do produto" required>
                     </div>
                 </div>
                 <div class="form-row">
                     <div class="col">
                         <label>Preço</label>
-                        <input type="number" class="form-control" id="preco" name="preco"
-                            placeholder="Digite o valor do produto" required>
+                        <input type="number" class="form-control" id="preco" name="preco" placeholder="Digite o valor do produto" required>
                     </div>
                 </div>
                 <div class="form-row">
                     <div class="col" id="formatar">
                         <label>Quantidade</label>
-                        <input type="number" class="form-control" id="quantidadeProduto" name="quantidadeProduto"
-                            placeholder="Quantidade de produto" required>
+                        <input type="number" class="form-control" id="quantidadeProduto" name="quantidadeProduto" placeholder="Quantidade de produto" required>
                     </div>
                 </div>
         </div>
         <div class="form-row">
             <div class="col" id="formatar">
                 <label>Quantidade de parcelas</label>
-                <input type="number" class="form-control" id="quantidadeParcelas" name="quantidadeParcela"
-                    placeholder="Quantidade de parcelas" required>
+                <input type="number" class="form-control" id="quantidadeParcelas" name="quantidadeParcela" placeholder="Quantidade de parcelas" required>
             </div>
         </div>
 
@@ -113,15 +104,9 @@
 
 
 
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 </body>
 
 </html>
