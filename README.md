@@ -1,13 +1,9 @@
 <p>Projeto de Resolução do Teste de Programação 'Linguagem de Programação - Web'</p>
 
-<p>Este projeto abrange a resolução de quatro desafios relacionados ao desenvolvimento web. Cada desafio representa uma aplicação única e funcional:</p>
-
-Programa de Notas: Desenvolvemos um sistema para calcular e registrar notas, permitindo aos usuários armazenar e gerenciar informações acadêmicas de forma eficiente.
-
-Gerador de Carnê de Pagamento
-
-Gerador de Contracheque 
-
-Calculadora IMC (Índice de Massa Corporal)
+<ul>Este projeto abrange a resolução de quatro desafios relacionados ao desenvolvimento web. Cada desafio representa uma aplicação única e funcional:</ul>
+<li>Programa de Notas</li>
+<li>Gerador de Carnê de Pagamento</li>
+<li>Gerador de Contracheque </li>
+<li>Calculadora IMC (Índice de Massa Corporal)</li>
 
 Instruído e avaliado pelo Professor e Mestre [Wellington Feitoza.](https://www.linkedin.com/in/wellingtonfeitoza/)
